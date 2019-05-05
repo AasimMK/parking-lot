@@ -1,15 +1,15 @@
 import os
-from src.constants import IO_PATH
 
 
 def load_file_commands(filename):
-    file_path = os.path.join(os.getcwd(), IO_PATH, filename)
-    with open(file_path, 'r') as file:
+    if not os.path.exists(filename):
+        print_wrapper('File does not exists at\n{0}'.format(filename))
+    with open(filename, 'r') as file:
         return file.read().splitlines()
 
+
 def write_to_file(filename, data):
-    file_path = os.path.join(os.getcwd(), IO_PATH, filename)
-    with open(file_path, 'w') as file:
+    with open(filename, 'w') as file:
         file.write(data)
 
 

@@ -31,7 +31,7 @@ class ParkingLot:
         :param car_color: Car color
         :return: String
         """
-        if self.check_slot_limit():
+        if self.check_slot_availability():
             available_slot = self.available_slots.index(None)
             self.available_slots.pop(available_slot)
             self.available_slots.insert(available_slot, self.generate_car_info(car_number, car_color))
@@ -53,7 +53,7 @@ class ParkingLot:
         else:
             return MESSAGE_INVALID_SLOT
 
-    def check_slot_limit(self):
+    def check_slot_availability(self):
         """
         Check if the slot is available
         :return: Boolean
@@ -158,6 +158,7 @@ class ManageParkingLot(ParkingLot):
             message = self.create_parking_lot(commands[1])
         elif self.interactive:
             message = 'Invalid Command. Create slot first'
+            print_wrapper(message)
             self.interactive_mode()
         else:
             print_wrapper('Invalid Command. Create slot first')
