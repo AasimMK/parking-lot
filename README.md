@@ -1,4 +1,6 @@
-## Automated Parking Lot System
+## Automated Parking Lot System with Python3
+
+### No external libraries are used
 
 
 ### How to run
