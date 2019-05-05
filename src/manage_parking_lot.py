@@ -94,7 +94,7 @@ class ParkingLot:
         else:
             return ', '.join(result)
 
-    def find_slots_by_number(self, number):
+    def find_slot_by_number(self, number):
         """
         Find car's slot by number
         :param number: Number given by user
@@ -181,7 +181,7 @@ class ManageParkingLot(ParkingLot):
         elif COMMAND_SLOTS_BY_COLOR in cli_action and len(cli_action) == 2:
             message = self.find_slots_by_color(cli_action[1])
         elif COMMAND_SLOTS_BY_NUMBER in cli_action and len(cli_action) == 2:
-            message = self.find_slots_by_number(cli_action[1])
+            message = self.find_slot_by_number(cli_action[1])
         elif COMMAND_STATUS in cli_action and len(cli_action) == 1:
             message = self.get_current_status()
         elif 'exit' in cli_action and len(cli_action) == 1:
