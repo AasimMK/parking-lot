@@ -4,3 +4,7 @@ def load_file(filename):
 
 def write_to_file(filename, data):
     pass
+
+
+def print_wrapper(text):
+    print('OUTPUT:\n{0}'.format(text))
