@@ -5,6 +5,15 @@ from src.constants import MESSAGE_NO_PARKING, MESSAGE_INVALID_SLOT, MESSAGE_INVA
 from src.utility import print_wrapper, load_file_commands, write_to_file
 
 
+class Car:
+    def __init__(self, number, color):
+        self.number = number
+        self.color = color
+
+    def get_detail(self):
+        return dict(number=self.number, color=self.color)
+
+
 class ParkingLot:
     """
     Class that performs actions for parking lot
@@ -109,7 +118,8 @@ class ParkingLot:
 
     @staticmethod
     def generate_car_info(number, color):
-        return dict(number=number, color=color)
+        car = Car(number, color)
+        return car.get_detail()
 
 
 class ManageParkingLot(ParkingLot):
